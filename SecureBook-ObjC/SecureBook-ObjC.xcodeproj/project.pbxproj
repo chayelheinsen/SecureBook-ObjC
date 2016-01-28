@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6ACE39061C5A55F6002C4E4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39051C5A55F6002C4E4C /* main.m */; };
+		6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39081C5A55F6002C4E4C /* AppDelegate.m */; };
+		6ACE390F1C5A55F6002C4E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE390D1C5A55F6002C4E4C /* Main.storyboard */; };
+		6ACE39111C5A55F6002C4E4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE39101C5A55F6002C4E4C /* Assets.xcassets */; };
+		6ACE39141C5A55F6002C4E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE39121C5A55F6002C4E4C /* LaunchScreen.storyboard */; };
+		6ACE391F1C5A55F6002C4E4C /* SecureBook_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE391E1C5A55F6002C4E4C /* SecureBook_ObjCTests.m */; };
+		6ACE392A1C5A55F6002C4E4C /* SecureBook_ObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39291C5A55F6002C4E4C /* SecureBook_ObjCUITests.m */; };
+		6ACE393F1C5A56B6002C4E4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE393E1C5A56B6002C4E4C /* ViewController.m */; };
+		6ACE394B1C5A5949002C4E4C /* PGContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE394A1C5A5949002C4E4C /* PGContact.m */; };
+		6ACE394D1C5A6C0A002C4E4C /* sndr.cer in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE394C1C5A6A30002C4E4C /* sndr.cer */; };
+		6ACE39511C5A7033002C4E4C /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39501C5A7033002C4E4C /* NSString+Utilities.m */; };
+		6ACE39541C5A833C002C4E4C /* SecureBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39521C5A833C002C4E4C /* SecureBook.xcdatamodeld */; };
+		9F4955B11F69AA15B68FF929 /* Pods_SecureBook_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7958FADCEBC445FF8FAB5149 /* Pods_SecureBook_ObjC.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6ACE391B1C5A55F6002C4E4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ACE38F91C5A55F6002C4E4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6ACE39001C5A55F6002C4E4C;
+			remoteInfo = "SecureBook-ObjC";
+		};
+		6ACE39261C5A55F6002C4E4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ACE38F91C5A55F6002C4E4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6ACE39001C5A55F6002C4E4C;
+			remoteInfo = "SecureBook-ObjC";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C64D736F90F0CCC79579449 /* Pods-SecureBook-ObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecureBook-ObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SecureBook-ObjC/Pods-SecureBook-ObjC.debug.xcconfig"; sourceTree = "<group>"; };
+		2038F8B6751D3D0A647AC9B0 /* Pods-SecureBook-ObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecureBook-ObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SecureBook-ObjC/Pods-SecureBook-ObjC.release.xcconfig"; sourceTree = "<group>"; };
+		6ACE39011C5A55F6002C4E4C /* SecureBook-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SecureBook-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ACE39051C5A55F6002C4E4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6ACE39071C5A55F6002C4E4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6ACE39081C5A55F6002C4E4C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6ACE390E1C5A55F6002C4E4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6ACE39101C5A55F6002C4E4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6ACE39131C5A55F6002C4E4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6ACE39151C5A55F6002C4E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ACE391A1C5A55F6002C4E4C /* SecureBook-ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SecureBook-ObjCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ACE391E1C5A55F6002C4E4C /* SecureBook_ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecureBook_ObjCTests.m; sourceTree = "<group>"; };
+		6ACE39201C5A55F6002C4E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ACE39251C5A55F6002C4E4C /* SecureBook-ObjCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SecureBook-ObjCUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ACE39291C5A55F6002C4E4C /* SecureBook_ObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecureBook_ObjCUITests.m; sourceTree = "<group>"; };
+		6ACE392B1C5A55F6002C4E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ACE393D1C5A56B6002C4E4C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6ACE393E1C5A56B6002C4E4C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6ACE39491C5A5949002C4E4C /* PGContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGContact.h; sourceTree = "<group>"; };
+		6ACE394A1C5A5949002C4E4C /* PGContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGContact.m; sourceTree = "<group>"; };
+		6ACE394C1C5A6A30002C4E4C /* sndr.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = sndr.cer; path = "SecureBook-ObjC/sndr.cer"; sourceTree = "<group>"; };
+		6ACE394F1C5A7033002C4E4C /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
+		6ACE39501C5A7033002C4E4C /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
+		6ACE39531C5A833C002C4E4C /* SecureBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecureBook.xcdatamodel; sourceTree = "<group>"; };
+		7958FADCEBC445FF8FAB5149 /* Pods_SecureBook_ObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecureBook_ObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6ACE38FE1C5A55F6002C4E4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F4955B11F69AA15B68FF929 /* Pods_SecureBook_ObjC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACE39171C5A55F6002C4E4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACE39221C5A55F6002C4E4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6ACE38F81C5A55F6002C4E4C = {
+			isa = PBXGroup;
+			children = (
+				6ACE394C1C5A6A30002C4E4C /* sndr.cer */,
+				6ACE39031C5A55F6002C4E4C /* SecureBook-ObjC */,
+				6ACE391D1C5A55F6002C4E4C /* SecureBook-ObjCTests */,
+				6ACE39281C5A55F6002C4E4C /* SecureBook-ObjCUITests */,
+				6ACE39021C5A55F6002C4E4C /* Products */,
+				EC98D26C81551226754FC3DB /* Pods */,
+				70077CAF0431B93E976103FF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6ACE39021C5A55F6002C4E4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE39011C5A55F6002C4E4C /* SecureBook-ObjC.app */,
+				6ACE391A1C5A55F6002C4E4C /* SecureBook-ObjCTests.xctest */,
+				6ACE39251C5A55F6002C4E4C /* SecureBook-ObjCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6ACE39031C5A55F6002C4E4C /* SecureBook-ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE39071C5A55F6002C4E4C /* AppDelegate.h */,
+				6ACE39081C5A55F6002C4E4C /* AppDelegate.m */,
+				6ACE393C1C5A56B6002C4E4C /* Controllers */,
+				6ACE39371C5A56A1002C4E4C /* Models */,
+				6ACE394E1C5A700B002C4E4C /* Categories */,
+				6ACE390D1C5A55F6002C4E4C /* Main.storyboard */,
+				6ACE39101C5A55F6002C4E4C /* Assets.xcassets */,
+				6ACE39121C5A55F6002C4E4C /* LaunchScreen.storyboard */,
+				6ACE39151C5A55F6002C4E4C /* Info.plist */,
+				6ACE39041C5A55F6002C4E4C /* Supporting Files */,
+				6ACE39521C5A833C002C4E4C /* SecureBook.xcdatamodeld */,
+			);
+			path = "SecureBook-ObjC";
+			sourceTree = "<group>";
+		};
+		6ACE39041C5A55F6002C4E4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE39051C5A55F6002C4E4C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6ACE391D1C5A55F6002C4E4C /* SecureBook-ObjCTests */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE391E1C5A55F6002C4E4C /* SecureBook_ObjCTests.m */,
+				6ACE39201C5A55F6002C4E4C /* Info.plist */,
+			);
+			path = "SecureBook-ObjCTests";
+			sourceTree = "<group>";
+		};
+		6ACE39281C5A55F6002C4E4C /* SecureBook-ObjCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE39291C5A55F6002C4E4C /* SecureBook_ObjCUITests.m */,
+				6ACE392B1C5A55F6002C4E4C /* Info.plist */,
+			);
+			path = "SecureBook-ObjCUITests";
+			sourceTree = "<group>";
+		};
+		6ACE39371C5A56A1002C4E4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE39481C5A5949002C4E4C /* PGContact */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6ACE393C1C5A56B6002C4E4C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE393D1C5A56B6002C4E4C /* ViewController.h */,
+				6ACE393E1C5A56B6002C4E4C /* ViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6ACE39481C5A5949002C4E4C /* PGContact */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE39491C5A5949002C4E4C /* PGContact.h */,
+				6ACE394A1C5A5949002C4E4C /* PGContact.m */,
+			);
+			path = PGContact;
+			sourceTree = "<group>";
+		};
+		6ACE394E1C5A700B002C4E4C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE394F1C5A7033002C4E4C /* NSString+Utilities.h */,
+				6ACE39501C5A7033002C4E4C /* NSString+Utilities.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		70077CAF0431B93E976103FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7958FADCEBC445FF8FAB5149 /* Pods_SecureBook_ObjC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC98D26C81551226754FC3DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C64D736F90F0CCC79579449 /* Pods-SecureBook-ObjC.debug.xcconfig */,
+				2038F8B6751D3D0A647AC9B0 /* Pods-SecureBook-ObjC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6ACE39001C5A55F6002C4E4C /* SecureBook-ObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ACE392E1C5A55F6002C4E4C /* Build configuration list for PBXNativeTarget "SecureBook-ObjC" */;
+			buildPhases = (
+				852BAEA479F2790ABDFBC383 /* Check Pods Manifest.lock */,
+				6ACE38FD1C5A55F6002C4E4C /* Sources */,
+				6ACE38FE1C5A55F6002C4E4C /* Frameworks */,
+				6ACE38FF1C5A55F6002C4E4C /* Resources */,
+				DAEB23E6B13C2749AF2C976C /* Embed Pods Frameworks */,
+				1F836FBB8E5E7B39B061D84B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SecureBook-ObjC";
+			productName = "SecureBook-ObjC";
+			productReference = 6ACE39011C5A55F6002C4E4C /* SecureBook-ObjC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6ACE39191C5A55F6002C4E4C /* SecureBook-ObjCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ACE39311C5A55F6002C4E4C /* Build configuration list for PBXNativeTarget "SecureBook-ObjCTests" */;
+			buildPhases = (
+				6ACE39161C5A55F6002C4E4C /* Sources */,
+				6ACE39171C5A55F6002C4E4C /* Frameworks */,
+				6ACE39181C5A55F6002C4E4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ACE391C1C5A55F6002C4E4C /* PBXTargetDependency */,
+			);
+			name = "SecureBook-ObjCTests";
+			productName = "SecureBook-ObjCTests";
+			productReference = 6ACE391A1C5A55F6002C4E4C /* SecureBook-ObjCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6ACE39241C5A55F6002C4E4C /* SecureBook-ObjCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ACE39341C5A55F6002C4E4C /* Build configuration list for PBXNativeTarget "SecureBook-ObjCUITests" */;
+			buildPhases = (
+				6ACE39211C5A55F6002C4E4C /* Sources */,
+				6ACE39221C5A55F6002C4E4C /* Frameworks */,
+				6ACE39231C5A55F6002C4E4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ACE39271C5A55F6002C4E4C /* PBXTargetDependency */,
+			);
+			name = "SecureBook-ObjCUITests";
+			productName = "SecureBook-ObjCUITests";
+			productReference = 6ACE39251C5A55F6002C4E4C /* SecureBook-ObjCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6ACE38F91C5A55F6002C4E4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Chayel Heinsen";
+				TargetAttributes = {
+					6ACE39001C5A55F6002C4E4C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					6ACE39191C5A55F6002C4E4C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6ACE39001C5A55F6002C4E4C;
+					};
+					6ACE39241C5A55F6002C4E4C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6ACE39001C5A55F6002C4E4C;
+					};
+				};
+			};
+			buildConfigurationList = 6ACE38FC1C5A55F6002C4E4C /* Build configuration list for PBXProject "SecureBook-ObjC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6ACE38F81C5A55F6002C4E4C;
+			productRefGroup = 6ACE39021C5A55F6002C4E4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6ACE39001C5A55F6002C4E4C /* SecureBook-ObjC */,
+				6ACE39191C5A55F6002C4E4C /* SecureBook-ObjCTests */,
+				6ACE39241C5A55F6002C4E4C /* SecureBook-ObjCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6ACE38FF1C5A55F6002C4E4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACE39141C5A55F6002C4E4C /* LaunchScreen.storyboard in Resources */,
+				6ACE39111C5A55F6002C4E4C /* Assets.xcassets in Resources */,
+				6ACE390F1C5A55F6002C4E4C /* Main.storyboard in Resources */,
+				6ACE394D1C5A6C0A002C4E4C /* sndr.cer in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACE39181C5A55F6002C4E4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACE39231C5A55F6002C4E4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F836FBB8E5E7B39B061D84B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SecureBook-ObjC/Pods-SecureBook-ObjC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		852BAEA479F2790ABDFBC383 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DAEB23E6B13C2749AF2C976C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SecureBook-ObjC/Pods-SecureBook-ObjC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6ACE38FD1C5A55F6002C4E4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */,
+				6ACE39511C5A7033002C4E4C /* NSString+Utilities.m in Sources */,
+				6ACE394B1C5A5949002C4E4C /* PGContact.m in Sources */,
+				6ACE39061C5A55F6002C4E4C /* main.m in Sources */,
+				6ACE393F1C5A56B6002C4E4C /* ViewController.m in Sources */,
+				6ACE39541C5A833C002C4E4C /* SecureBook.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACE39161C5A55F6002C4E4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACE391F1C5A55F6002C4E4C /* SecureBook_ObjCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACE39211C5A55F6002C4E4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACE392A1C5A55F6002C4E4C /* SecureBook_ObjCUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6ACE391C1C5A55F6002C4E4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6ACE39001C5A55F6002C4E4C /* SecureBook-ObjC */;
+			targetProxy = 6ACE391B1C5A55F6002C4E4C /* PBXContainerItemProxy */;
+		};
+		6ACE39271C5A55F6002C4E4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6ACE39001C5A55F6002C4E4C /* SecureBook-ObjC */;
+			targetProxy = 6ACE39261C5A55F6002C4E4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6ACE390D1C5A55F6002C4E4C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ACE390E1C5A55F6002C4E4C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6ACE39121C5A55F6002C4E4C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ACE39131C5A55F6002C4E4C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6ACE392C1C5A55F6002C4E4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6ACE392D1C5A55F6002C4E4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6ACE392F1C5A55F6002C4E4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C64D736F90F0CCC79579449 /* Pods-SecureBook-ObjC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SecureBook-ObjC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chayelheinsen.SecureBook-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6ACE39301C5A55F6002C4E4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2038F8B6751D3D0A647AC9B0 /* Pods-SecureBook-ObjC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SecureBook-ObjC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chayelheinsen.SecureBook-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6ACE39321C5A55F6002C4E4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SecureBook-ObjCTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chayelheinsen.SecureBook-ObjCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SecureBook-ObjC.app/SecureBook-ObjC";
+			};
+			name = Debug;
+		};
+		6ACE39331C5A55F6002C4E4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SecureBook-ObjCTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chayelheinsen.SecureBook-ObjCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SecureBook-ObjC.app/SecureBook-ObjC";
+			};
+			name = Release;
+		};
+		6ACE39351C5A55F6002C4E4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "SecureBook-ObjCUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chayelheinsen.SecureBook-ObjCUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "SecureBook-ObjC";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		6ACE39361C5A55F6002C4E4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "SecureBook-ObjCUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chayelheinsen.SecureBook-ObjCUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "SecureBook-ObjC";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6ACE38FC1C5A55F6002C4E4C /* Build configuration list for PBXProject "SecureBook-ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACE392C1C5A55F6002C4E4C /* Debug */,
+				6ACE392D1C5A55F6002C4E4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ACE392E1C5A55F6002C4E4C /* Build configuration list for PBXNativeTarget "SecureBook-ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACE392F1C5A55F6002C4E4C /* Debug */,
+				6ACE39301C5A55F6002C4E4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ACE39311C5A55F6002C4E4C /* Build configuration list for PBXNativeTarget "SecureBook-ObjCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACE39321C5A55F6002C4E4C /* Debug */,
+				6ACE39331C5A55F6002C4E4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ACE39341C5A55F6002C4E4C /* Build configuration list for PBXNativeTarget "SecureBook-ObjCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACE39351C5A55F6002C4E4C /* Debug */,
+				6ACE39361C5A55F6002C4E4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6ACE39521C5A833C002C4E4C /* SecureBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6ACE39531C5A833C002C4E4C /* SecureBook.xcdatamodel */,
+			);
+			currentVersion = 6ACE39531C5A833C002C4E4C /* SecureBook.xcdatamodel */;
+			path = SecureBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6ACE38F91C5A55F6002C4E4C /* Project object */;
+}
