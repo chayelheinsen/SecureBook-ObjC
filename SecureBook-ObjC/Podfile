@@ -5,10 +5,18 @@ use_frameworks!
 target 'SecureBook-ObjC' do
 # Networking
 pod 'AFNetworking', '~> 3.0'
+
 # Easy CoreData
 pod 'MagicalRecord'
+
 # AES 256 CBC
 #pod 'RNCryptor', '~> 4.0.0-beta'
+
+# Notifications
+pod 'Mercury'
+
+# Nice Pull to refresh
+pod 'DGElasticPullToRefresh'
 end
 
 target 'SecureBook-ObjCTests' do

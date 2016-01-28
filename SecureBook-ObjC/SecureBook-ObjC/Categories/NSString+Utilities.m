@@ -13,9 +13,9 @@
 - (BOOL)containsDigits {
     
     if ([self rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound) {
-        return NO;
-    } else {
         return YES;
+    } else {
+        return NO;
     }
 }
 

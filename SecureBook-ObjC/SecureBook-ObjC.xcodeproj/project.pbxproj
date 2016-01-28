@@ -14,11 +14,16 @@
 		6ACE39141C5A55F6002C4E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE39121C5A55F6002C4E4C /* LaunchScreen.storyboard */; };
 		6ACE391F1C5A55F6002C4E4C /* SecureBook_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE391E1C5A55F6002C4E4C /* SecureBook_ObjCTests.m */; };
 		6ACE392A1C5A55F6002C4E4C /* SecureBook_ObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39291C5A55F6002C4E4C /* SecureBook_ObjCUITests.m */; };
-		6ACE393F1C5A56B6002C4E4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE393E1C5A56B6002C4E4C /* ViewController.m */; };
 		6ACE394B1C5A5949002C4E4C /* PGContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE394A1C5A5949002C4E4C /* PGContact.m */; };
 		6ACE394D1C5A6C0A002C4E4C /* sndr.cer in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE394C1C5A6A30002C4E4C /* sndr.cer */; };
 		6ACE39511C5A7033002C4E4C /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39501C5A7033002C4E4C /* NSString+Utilities.m */; };
 		6ACE39541C5A833C002C4E4C /* SecureBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39521C5A833C002C4E4C /* SecureBook.xcdatamodeld */; };
+		6ACE39571C5A8F2F002C4E4C /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39561C5A8F2F002C4E4C /* ContactsTableViewController.m */; };
+		6ACE395B1C5A9544002C4E4C /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE395A1C5A9544002C4E4C /* ContactTableViewCell.m */; };
+		6ACE395E1C5A97E7002C4E4C /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE395D1C5A97E7002C4E4C /* UIViewController+Utilities.m */; };
+		6ACE39621C5A9C32002C4E4C /* CDFInitialsAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39611C5A9C32002C4E4C /* CDFInitialsAvatar.m */; };
+		6ACE396A1C5AC33D002C4E4C /* RecentContactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39691C5AC33D002C4E4C /* RecentContactsTableViewCell.m */; };
+		6ACE396D1C5AC6DC002C4E4C /* RecentContactView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE396C1C5AC6DC002C4E4C /* RecentContactView.m */; };
 		9F4955B11F69AA15B68FF929 /* Pods_SecureBook_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7958FADCEBC445FF8FAB5149 /* Pods_SecureBook_ObjC.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,14 +61,24 @@
 		6ACE39251C5A55F6002C4E4C /* SecureBook-ObjCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SecureBook-ObjCUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACE39291C5A55F6002C4E4C /* SecureBook_ObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecureBook_ObjCUITests.m; sourceTree = "<group>"; };
 		6ACE392B1C5A55F6002C4E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6ACE393D1C5A56B6002C4E4C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6ACE393E1C5A56B6002C4E4C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6ACE39491C5A5949002C4E4C /* PGContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGContact.h; sourceTree = "<group>"; };
 		6ACE394A1C5A5949002C4E4C /* PGContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGContact.m; sourceTree = "<group>"; };
 		6ACE394C1C5A6A30002C4E4C /* sndr.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = sndr.cer; path = "SecureBook-ObjC/sndr.cer"; sourceTree = "<group>"; };
 		6ACE394F1C5A7033002C4E4C /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
 		6ACE39501C5A7033002C4E4C /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
 		6ACE39531C5A833C002C4E4C /* SecureBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecureBook.xcdatamodel; sourceTree = "<group>"; };
+		6ACE39551C5A8F2F002C4E4C /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
+		6ACE39561C5A8F2F002C4E4C /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
+		6ACE39591C5A9544002C4E4C /* ContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableViewCell.h; sourceTree = "<group>"; };
+		6ACE395A1C5A9544002C4E4C /* ContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableViewCell.m; sourceTree = "<group>"; };
+		6ACE395C1C5A97E7002C4E4C /* UIViewController+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
+		6ACE395D1C5A97E7002C4E4C /* UIViewController+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
+		6ACE39601C5A9C32002C4E4C /* CDFInitialsAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFInitialsAvatar.h; sourceTree = "<group>"; };
+		6ACE39611C5A9C32002C4E4C /* CDFInitialsAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFInitialsAvatar.m; sourceTree = "<group>"; };
+		6ACE39681C5AC33D002C4E4C /* RecentContactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentContactsTableViewCell.h; sourceTree = "<group>"; };
+		6ACE39691C5AC33D002C4E4C /* RecentContactsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentContactsTableViewCell.m; sourceTree = "<group>"; };
+		6ACE396B1C5AC6DC002C4E4C /* RecentContactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentContactView.h; sourceTree = "<group>"; };
+		6ACE396C1C5AC6DC002C4E4C /* RecentContactView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentContactView.m; sourceTree = "<group>"; };
 		7958FADCEBC445FF8FAB5149 /* Pods_SecureBook_ObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecureBook_ObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,9 +136,11 @@
 			children = (
 				6ACE39071C5A55F6002C4E4C /* AppDelegate.h */,
 				6ACE39081C5A55F6002C4E4C /* AppDelegate.m */,
-				6ACE393C1C5A56B6002C4E4C /* Controllers */,
 				6ACE39371C5A56A1002C4E4C /* Models */,
+				6ACE39581C5A9533002C4E4C /* Views */,
+				6ACE393C1C5A56B6002C4E4C /* Controllers */,
 				6ACE394E1C5A700B002C4E4C /* Categories */,
+				6ACE395F1C5A9C32002C4E4C /* Helpers */,
 				6ACE390D1C5A55F6002C4E4C /* Main.storyboard */,
 				6ACE39101C5A55F6002C4E4C /* Assets.xcassets */,
 				6ACE39121C5A55F6002C4E4C /* LaunchScreen.storyboard */,
@@ -171,8 +188,8 @@
 		6ACE393C1C5A56B6002C4E4C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6ACE393D1C5A56B6002C4E4C /* ViewController.h */,
-				6ACE393E1C5A56B6002C4E4C /* ViewController.m */,
+				6ACE39551C5A8F2F002C4E4C /* ContactsTableViewController.h */,
+				6ACE39561C5A8F2F002C4E4C /* ContactsTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,8 +208,32 @@
 			children = (
 				6ACE394F1C5A7033002C4E4C /* NSString+Utilities.h */,
 				6ACE39501C5A7033002C4E4C /* NSString+Utilities.m */,
+				6ACE395C1C5A97E7002C4E4C /* UIViewController+Utilities.h */,
+				6ACE395D1C5A97E7002C4E4C /* UIViewController+Utilities.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		6ACE39581C5A9533002C4E4C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE39591C5A9544002C4E4C /* ContactTableViewCell.h */,
+				6ACE395A1C5A9544002C4E4C /* ContactTableViewCell.m */,
+				6ACE39681C5AC33D002C4E4C /* RecentContactsTableViewCell.h */,
+				6ACE39691C5AC33D002C4E4C /* RecentContactsTableViewCell.m */,
+				6ACE396B1C5AC6DC002C4E4C /* RecentContactView.h */,
+				6ACE396C1C5AC6DC002C4E4C /* RecentContactView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6ACE395F1C5A9C32002C4E4C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE39601C5A9C32002C4E4C /* CDFInitialsAvatar.h */,
+				6ACE39611C5A9C32002C4E4C /* CDFInitialsAvatar.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		70077CAF0431B93E976103FF /* Frameworks */ = {
@@ -394,11 +435,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACE396A1C5AC33D002C4E4C /* RecentContactsTableViewCell.m in Sources */,
 				6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */,
 				6ACE39511C5A7033002C4E4C /* NSString+Utilities.m in Sources */,
+				6ACE39621C5A9C32002C4E4C /* CDFInitialsAvatar.m in Sources */,
+				6ACE395B1C5A9544002C4E4C /* ContactTableViewCell.m in Sources */,
+				6ACE395E1C5A97E7002C4E4C /* UIViewController+Utilities.m in Sources */,
+				6ACE396D1C5AC6DC002C4E4C /* RecentContactView.m in Sources */,
+				6ACE39571C5A8F2F002C4E4C /* ContactsTableViewController.m in Sources */,
 				6ACE394B1C5A5949002C4E4C /* PGContact.m in Sources */,
 				6ACE39061C5A55F6002C4E4C /* main.m in Sources */,
-				6ACE393F1C5A56B6002C4E4C /* ViewController.m in Sources */,
 				6ACE39541C5A833C002C4E4C /* SecureBook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +514,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -511,6 +558,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -540,6 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SecureBook-ObjC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chayelheinsen.SecureBook-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -552,6 +601,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SecureBook-ObjC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chayelheinsen.SecureBook-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

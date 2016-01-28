@@ -21,10 +21,6 @@
     
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"SecureBook"];
     
-    [PGContact fetchContactsWithCompletion:^(NSArray<PGContact *> * _Nullable contacts, NSError * _Nullable error) {
-        
-    }];
-    
     return YES;
 }
 

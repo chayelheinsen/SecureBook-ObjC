@@ -19,6 +19,10 @@
     return [UIImage imageWithData:self.imageData];
 }
 
+- (NSString * _Nullable)fullName {
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+}
+
 #pragma mark - Class Methods
 
 /**
@@ -68,6 +72,10 @@
                     [contacts addObject:contact];
                 }
             }
+            
+            // Alphabetically sort the contacts by name.
+            NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"fullName" ascending:YES];
+            contacts = [[contacts sortedArrayUsingDescriptors:@[sort]] mutableCopy];
             
             completion(contacts, nil);
         }
@@ -147,7 +155,7 @@
     NSNumber *zip = dict[@"zip"];
     
     if ([zip isKindOfClass:[NSNumber class]]) {
-        contact.zip = zip.integerValue;
+        contact.zip = zip;
     }
     
     NSString *phone = dict[@"phone1"];

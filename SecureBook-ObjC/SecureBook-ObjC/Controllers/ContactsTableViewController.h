@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ContactsTableViewController.h
 //  SecureBook-ObjC
 //
 //  Created by Chayel Heinsen on 1/28/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ContactsTableViewController : UITableViewController
 
 @end
-

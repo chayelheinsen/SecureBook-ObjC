@@ -19,16 +19,16 @@
 @property (strong, nonatomic) NSString * _Nullable city;
 @property (strong, nonatomic) NSString * _Nullable county;
 @property (strong, nonatomic) NSString * _Nullable state;
-@property (nonatomic) NSInteger zip;
+@property (strong, nonatomic) NSNumber * _Nullable zip;
 @property (strong, nonatomic) NSString * _Nullable phone;
 @property (strong, nonatomic) NSString * _Nullable alternatePhone;
 @property (strong, nonatomic) NSString * _Nullable email;
 @property (strong, nonatomic) NSString * _Nullable website;
 @property (strong, nonatomic) NSData * _Nullable imageData;
+@property (weak, nonatomic, readonly, getter=profilePicture) UIImage * _Nullable profilePicture;
+@property (weak, nonatomic, readonly, getter=fullName) NSString * _Nullable fullName;
 
 #pragma mark - Instance Methods
-
-- (UIImage * _Nullable)profilePicture;
 
 #pragma mark - Class Methods
 
