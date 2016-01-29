@@ -11,11 +11,13 @@
 #import "ContactTableViewCell.h"
 #import "RecentContactsTableViewCell.h"
 #import "UIViewController+Utilities.h"
+#import "SingleContactTableViewController.h"
 #import "PGMacros.h"
 @import DGElasticPullToRefresh;
 
 @interface ContactsTableViewController () <UISearchControllerDelegate, UISearchResultsUpdating>
 
+// Lazy loaded!
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSMutableArray<PGContact *> *contacts;
 @property (strong, nonatomic) NSMutableArray<PGContact *> *filterdContacts;
@@ -31,37 +33,14 @@
     self.contacts = [NSMutableArray new];
     self.filterdContacts = [NSMutableArray new];
     
-    // Set up search
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-    self.searchController.searchResultsUpdater = self;
-    self.searchController.dimsBackgroundDuringPresentation = NO;
-    self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
-    self.searchController.hidesNavigationBarDuringPresentation = NO;
-    self.searchController.searchBar.placeholder = @"Search Contacts";
-    self.searchController.searchBar.backgroundColor = self.navigationController.navigationBar.barTintColor;
-    self.searchController.searchBar.barTintColor = [UIColor whiteColor];
-    self.searchController.searchBar.tintColor = [UIColor whiteColor];
-    
-    // Update the color of the textfield inside the search bar.
-    UITextField *searchBarTextField = (UITextField *)[self.searchController.searchBar valueForKey:@"searchField"];
-    searchBarTextField.textColor = [UIColor whiteColor];
-    
-    // Change the search bar placeholder text color
-    [searchBarTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    
-    self.definesPresentationContext = YES;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     // Setup tableView
     DGElasticPullToRefreshLoadingViewCircle *loadingView = [DGElasticPullToRefreshLoadingViewCircle new];
     loadingView.tintColor = [UIColor whiteColor];
     [self.tableView dg_setPullToRefreshFillColor:self.navigationController.navigationBar.barTintColor];
     [self.tableView dg_setPullToRefreshBackgroundColor:[UIColor whiteColor]];
+    
+    self.tableView.sectionIndexColor = [UIColor whiteColor];
+    self.tableView.sectionIndexBackgroundColor = self.navigationController.navigationBar.barTintColor;
     
     // Remove that ugly hair line from the navigation bar
     [self removeNavigationBarHairline:self.navigationController.navigationBar];
@@ -92,8 +71,9 @@
             // Update the tableView!
             // If there isn't anything persisted, we will fetch it.
             if (self.contacts.count == 0 || !self.contacts) {
-                [self fetch];
-                [self removeBlurView];
+                [self fetchWithCompletion:^{
+                    [self removeBlurView];
+                }];
             } else {
                 NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"fullName" ascending:YES];
                 self.contacts = [[self.contacts sortedArrayUsingDescriptors:@[sort]] mutableCopy];
@@ -127,7 +107,6 @@
         
         return self.contacts.count;
     }
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -168,17 +147,21 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     
-    NSMutableArray *letters = [NSMutableArray new];
-    
-    for (PGContact *contact in self.contacts) {
-        NSString *character = [[contact.firstName substringToIndex:1] uppercaseString];
+    if (self.searchController.active && ![self.searchController.searchBar.text isEqualToString:@""]) {
+        return nil;
+    } else {
+        NSMutableArray *letters = [NSMutableArray new];
         
-        if (![letters containsObject:character]) {
-            [letters addObject:character];
+        for (PGContact *contact in self.contacts) {
+            NSString *character = [[contact.firstName substringToIndex:1] uppercaseString];
+            
+            if (![letters containsObject:character]) {
+                [letters addObject:character];
+            }
         }
+        
+        return letters; //[NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil];
     }
-    
-    return letters; //[NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
@@ -203,7 +186,30 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    if (indexPath.section == 1) {
+        PGContact *contact;
+        
+        if (self.searchController.active && ![self.searchController.searchBar.text isEqualToString:@""]) {
+            contact = [self.filterdContacts objectAtIndex:indexPath.row];
+        } else {
+            contact = [self.contacts objectAtIndex:indexPath.row];
+        }
+        
+        [self performSegueWithIdentifier:@"SingleContactTableViewControllerSegue" sender:contact];
+    }
+    
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if ([[segue destinationViewController] isKindOfClass:[SingleContactTableViewController class]]) {
+        SingleContactTableViewController *vc = (SingleContactTableViewController *)[segue destinationViewController];
+        vc.contact = (PGContact *)sender;
+    }
 }
 
 #pragma mark - UISearchResultsUpdating
@@ -222,6 +228,10 @@
 #pragma mark - Helpers
 
 - (void)fetch {
+    [self fetchWithCompletion:nil];
+}
+
+- (void)fetchWithCompletion:(void(^)())completion {
     [PGContact fetchContactsWithCompletion:^(NSArray<PGContact *> * _Nullable contacts, NSError * _Nullable error) {
         
         if (error) {
@@ -232,6 +242,10 @@
         }
         
         [self.tableView dg_stopLoading];
+        
+        if (completion) {
+            completion();
+        }
     }];
 }
 
@@ -249,6 +263,32 @@
     }
     
     return 0;
+}
+
+- (UISearchController *)searchController {
+    
+    if (_searchController == nil) {
+        UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+        searchController.searchResultsUpdater = self;
+        searchController.dimsBackgroundDuringPresentation = NO;
+        searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+        searchController.hidesNavigationBarDuringPresentation = NO;
+        searchController.searchBar.placeholder = @"Search Contacts";
+        searchController.searchBar.backgroundColor = self.navigationController.navigationBar.barTintColor;
+        searchController.searchBar.barTintColor = [UIColor whiteColor];
+        searchController.searchBar.tintColor = [UIColor whiteColor];
+        self.definesPresentationContext = YES;
+        
+        // Update the color of the textfield inside the search bar.
+        UITextField *searchBarTextField = (UITextField *)[searchController.searchBar valueForKey:@"searchField"];
+        searchBarTextField.textColor = [UIColor whiteColor];
+        
+        // Change the search bar placeholder text color
+        [searchBarTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+        _searchController = searchController;
+    }
+    
+    return _searchController;
 }
 
 - (UIVisualEffectView *)blurView {

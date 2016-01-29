@@ -86,12 +86,16 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-SecureBook-ObjC/AFNetworking.framework"
   install_framework "Pods-SecureBook-ObjC/DGElasticPullToRefresh.framework"
+  install_framework "Pods-SecureBook-ObjC/MXParallaxHeader.framework"
   install_framework "Pods-SecureBook-ObjC/MagicalRecord.framework"
   install_framework "Pods-SecureBook-ObjC/Mercury.framework"
+  install_framework "Pods-SecureBook-ObjC/ionicons.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-SecureBook-ObjC/AFNetworking.framework"
   install_framework "Pods-SecureBook-ObjC/DGElasticPullToRefresh.framework"
+  install_framework "Pods-SecureBook-ObjC/MXParallaxHeader.framework"
   install_framework "Pods-SecureBook-ObjC/MagicalRecord.framework"
   install_framework "Pods-SecureBook-ObjC/Mercury.framework"
+  install_framework "Pods-SecureBook-ObjC/ionicons.framework"
 fi

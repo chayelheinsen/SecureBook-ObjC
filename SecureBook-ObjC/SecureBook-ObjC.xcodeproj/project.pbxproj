@@ -12,6 +12,10 @@
 		6A8313A91C5B97C100A32422 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313A11C5B97C100A32422 /* KeychainItemWrapper.m */; };
 		6A8313AA1C5B97C100A32422 /* NSData+AES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313A31C5B97C100A32422 /* NSData+AES256.m */; };
 		6A8313AB1C5B97C100A32422 /* DataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313A61C5B97C100A32422 /* DataGenerator.m */; };
+		6A8313AE1C5BBC4500A32422 /* ContactHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8313AD1C5BBC4500A32422 /* ContactHeader.xib */; };
+		6A8313B11C5BBC8A00A32422 /* SingleContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313B01C5BBC8A00A32422 /* SingleContactTableViewController.m */; };
+		6A8313B41C5BBFA200A32422 /* ContactInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313B31C5BBFA200A32422 /* ContactInformationTableViewCell.m */; };
+		6A8313B71C5BC0B900A32422 /* ContactHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313B61C5BC0B900A32422 /* ContactHeader.m */; };
 		6ACE39061C5A55F6002C4E4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39051C5A55F6002C4E4C /* main.m */; };
 		6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39081C5A55F6002C4E4C /* AppDelegate.m */; };
 		6ACE390F1C5A55F6002C4E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE390D1C5A55F6002C4E4C /* Main.storyboard */; };
@@ -63,6 +67,13 @@
 		6A8313A51C5B97C100A32422 /* DataGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataGenerator.h; sourceTree = "<group>"; };
 		6A8313A61C5B97C100A32422 /* DataGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataGenerator.m; sourceTree = "<group>"; };
 		6A8313AC1C5BB14B00A32422 /* PGMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGMacros.h; sourceTree = "<group>"; };
+		6A8313AD1C5BBC4500A32422 /* ContactHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactHeader.xib; sourceTree = "<group>"; };
+		6A8313AF1C5BBC8A00A32422 /* SingleContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleContactTableViewController.h; sourceTree = "<group>"; };
+		6A8313B01C5BBC8A00A32422 /* SingleContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleContactTableViewController.m; sourceTree = "<group>"; };
+		6A8313B21C5BBFA200A32422 /* ContactInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInformationTableViewCell.h; sourceTree = "<group>"; };
+		6A8313B31C5BBFA200A32422 /* ContactInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInformationTableViewCell.m; sourceTree = "<group>"; };
+		6A8313B51C5BC0B900A32422 /* ContactHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactHeader.h; sourceTree = "<group>"; };
+		6A8313B61C5BC0B900A32422 /* ContactHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactHeader.m; sourceTree = "<group>"; };
 		6ACE39011C5A55F6002C4E4C /* SecureBook-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SecureBook-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACE39051C5A55F6002C4E4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6ACE39071C5A55F6002C4E4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -238,6 +249,8 @@
 			children = (
 				6ACE39551C5A8F2F002C4E4C /* ContactsTableViewController.h */,
 				6ACE39561C5A8F2F002C4E4C /* ContactsTableViewController.m */,
+				6A8313AF1C5BBC8A00A32422 /* SingleContactTableViewController.h */,
+				6A8313B01C5BBC8A00A32422 /* SingleContactTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,6 +278,11 @@
 		6ACE39581C5A9533002C4E4C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6A8313B51C5BC0B900A32422 /* ContactHeader.h */,
+				6A8313B61C5BC0B900A32422 /* ContactHeader.m */,
+				6A8313AD1C5BBC4500A32422 /* ContactHeader.xib */,
+				6A8313B21C5BBFA200A32422 /* ContactInformationTableViewCell.h */,
+				6A8313B31C5BBFA200A32422 /* ContactInformationTableViewCell.m */,
 				6ACE39591C5A9544002C4E4C /* ContactTableViewCell.h */,
 				6ACE395A1C5A9544002C4E4C /* ContactTableViewCell.m */,
 				6ACE39681C5AC33D002C4E4C /* RecentContactsTableViewCell.h */,
@@ -414,6 +432,7 @@
 				6ACE39111C5A55F6002C4E4C /* Assets.xcassets in Resources */,
 				6ACE390F1C5A55F6002C4E4C /* Main.storyboard in Resources */,
 				6ACE394D1C5A6C0A002C4E4C /* sndr.cer in Resources */,
+				6A8313AE1C5BBC4500A32422 /* ContactHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +510,7 @@
 				6ACE396A1C5AC33D002C4E4C /* RecentContactsTableViewCell.m in Sources */,
 				6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */,
 				6ACE39511C5A7033002C4E4C /* NSString+Utilities.m in Sources */,
+				6A8313B41C5BBFA200A32422 /* ContactInformationTableViewCell.m in Sources */,
 				6ACE39621C5A9C32002C4E4C /* CDFInitialsAvatar.m in Sources */,
 				6ACE395B1C5A9544002C4E4C /* ContactTableViewCell.m in Sources */,
 				6A8313A91C5B97C100A32422 /* KeychainItemWrapper.m in Sources */,
@@ -498,8 +518,10 @@
 				6ACE396D1C5AC6DC002C4E4C /* RecentContactView.m in Sources */,
 				6ACE39571C5A8F2F002C4E4C /* ContactsTableViewController.m in Sources */,
 				6A8313AB1C5B97C100A32422 /* DataGenerator.m in Sources */,
+				6A8313B71C5BC0B900A32422 /* ContactHeader.m in Sources */,
 				6A8313A71C5B97C100A32422 /* EncryptionTransformer.m in Sources */,
 				6ACE394B1C5A5949002C4E4C /* PGContact.m in Sources */,
+				6A8313B11C5BBC8A00A32422 /* SingleContactTableViewController.m in Sources */,
 				6ACE39061C5A55F6002C4E4C /* main.m in Sources */,
 				6ACE39541C5A833C002C4E4C /* SecureBook.xcdatamodeld in Sources */,
 			);

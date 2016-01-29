@@ -17,6 +17,12 @@ pod 'Mercury'
 
 # Nice Pull to refresh
 pod 'DGElasticPullToRefresh'
+
+# Parallax ScrollViews
+pod 'MXParallaxHeader'
+
+# Some easy images
+pod 'ionicons'
 end
 
 target 'SecureBook-ObjCTests' do
