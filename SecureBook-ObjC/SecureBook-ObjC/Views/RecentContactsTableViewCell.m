@@ -8,7 +8,6 @@
 
 #import "RecentContactsTableViewCell.h"
 #import "PGContact.h"
-#import "CDFInitialsAvatar.h"
 
 @implementation RecentContactsTableViewCell
 
@@ -51,9 +50,6 @@
 
         if (contact.profilePicture) {
             [self.first setImage:contact.profilePicture text:contact.firstName];
-        } else {
-            CDFInitialsAvatar *initialsAvatar = [[CDFInitialsAvatar alloc] initWithRect:self.first.imageView.bounds fullName:contact.fullName];
-            [self.first setImage:initialsAvatar.imageRepresentation text:contact.firstName];
         }
     }
 
@@ -62,9 +58,6 @@
 
         if (contact.profilePicture) {
             [self.second setImage:contact.profilePicture text:contact.firstName];
-        } else {
-            CDFInitialsAvatar *initialsAvatar = [[CDFInitialsAvatar alloc] initWithRect: self.second.imageView.bounds fullName:contact.fullName];
-            [self.second setImage:initialsAvatar.imageRepresentation text:contact.firstName];
         }
     }
 
@@ -73,9 +66,6 @@
 
         if (contact.profilePicture) {
             [self.third setImage:contact.profilePicture text:contact.firstName];
-        } else {
-            CDFInitialsAvatar *initialsAvatar = [[CDFInitialsAvatar alloc] initWithRect: self.third.imageView.bounds fullName:contact.fullName];
-            [self.third setImage:initialsAvatar.imageRepresentation text:contact.firstName];
         }
     }
 
@@ -84,9 +74,6 @@
 
         if (contact.profilePicture) {
             [self.fourth setImage:contact.profilePicture text:contact.firstName];
-        } else {
-            CDFInitialsAvatar *initialsAvatar = [[CDFInitialsAvatar alloc] initWithRect: self.fourth.imageView.bounds fullName:contact.fullName];
-            [self.fourth setImage:initialsAvatar.imageRepresentation text:contact.firstName];
         }
     }
 }

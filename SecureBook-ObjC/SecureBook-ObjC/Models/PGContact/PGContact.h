@@ -19,16 +19,19 @@
 @property (strong, nonatomic) NSString * _Nullable city;
 @property (strong, nonatomic) NSString * _Nullable county;
 @property (strong, nonatomic) NSString * _Nullable state;
-@property (strong, nonatomic) NSNumber * _Nullable zip;
+@property (strong, nonatomic) NSString * _Nullable zip;
 @property (strong, nonatomic) NSString * _Nullable phone;
 @property (strong, nonatomic) NSString * _Nullable alternatePhone;
 @property (strong, nonatomic) NSString * _Nullable email;
 @property (strong, nonatomic) NSString * _Nullable website;
-@property (strong, nonatomic) NSData * _Nullable imageData;
-@property (weak, nonatomic, readonly, getter=profilePicture) UIImage * _Nullable profilePicture;
-@property (weak, nonatomic, readonly, getter=fullName) NSString * _Nullable fullName;
+@property (strong, nonatomic) NSString * _Nullable imageData;
+@property (strong, nonatomic, readonly, getter=profilePicture) UIImage * _Nullable profilePicture;
+@property (strong, nonatomic, readonly, getter=fullName) NSString * _Nullable fullName;
 
 #pragma mark - Instance Methods
+
+- (void)save;
+- (void)destroy;
 
 #pragma mark - Class Methods
 
@@ -38,5 +41,4 @@
  *  @param completion Returns the contacts or an error if one occured.
  */
 + (void)fetchContactsWithCompletion:(void(^ _Nonnull)(NSArray<PGContact *>  * _Nullable contacts, NSError * _Nullable error))completion;
-
 @end

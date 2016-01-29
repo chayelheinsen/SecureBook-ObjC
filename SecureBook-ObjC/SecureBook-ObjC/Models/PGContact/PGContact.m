@@ -8,6 +8,7 @@
 
 #import "PGContact.h"
 #import "NSString+Utilities.h"
+#import "CDFInitialsAvatar.h"
 @import AFNetworking;
 
 @implementation PGContact
@@ -16,7 +17,15 @@
 #pragma mark - Instance Methods
 
 - (UIImage * _Nullable)profilePicture {
-    return [UIImage imageWithData:self.imageData];
+    
+    NSData *imageData = [[NSData alloc] initWithBase64EncodedString:self.imageData options:0];
+    
+    if (imageData) {
+        return [UIImage imageWithData:imageData];
+    } else {
+        CDFInitialsAvatar *initialsAvatar = [[CDFInitialsAvatar alloc] initWithRect:CGRectMake(0, 0, 50, 50) fullName:self.fullName];
+        return initialsAvatar.imageRepresentation;
+    }
 }
 
 - (NSString * _Nullable)fullName {
@@ -62,6 +71,10 @@
             
             NSMutableArray<PGContact *> *contacts = [NSMutableArray new];
             
+            // Delete all th old contacts
+            [PGContact MR_truncateAll];
+            [PGContact MR_truncateAllInContext:[NSManagedObjectContext MR_rootSavingContext]];
+            
             // Create PGContact's from the array of dictionarys.
             for (NSDictionary *contactDict in contactDicts) {
                 // Create the contact.
@@ -69,14 +82,14 @@
                 
                 // Make sure that we got a contact back and append it to the array.
                 if (contact) {
+                    [contact save];
                     [contacts addObject:contact];
                 }
             }
             
             // Alphabetically sort the contacts by name.
-            NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"fullName" ascending:YES];
+            NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"firstName" ascending:YES];
             contacts = [[contacts sortedArrayUsingDescriptors:@[sort]] mutableCopy];
-            
             completion(contacts, nil);
         }
     }];
@@ -98,9 +111,9 @@
  *  @return A new PGContact or nil if one could not be created.
  */
 + (PGContact * _Nullable)map:(NSDictionary * _Nonnull)dict {
-    NSLog(@"%@", dict);
+    //NSLog(@"%@", dict);
     
-    PGContact *contact = [PGContact MR_createEntity];
+    PGContact *contact = [PGContact MR_createEntityInContext:[NSManagedObjectContext MR_rootSavingContext]];
     
     // Grab the information and validate the data.
     
@@ -152,9 +165,13 @@
         contact.state = state;
     }
     
-    NSNumber *zip = dict[@"zip"];
+    id zip = dict[@"zip"];
     
     if ([zip isKindOfClass:[NSNumber class]]) {
+        NSNumber *zipNumber = (NSNumber *)zip;
+        NSString *zipString = zipNumber.stringValue;
+        contact.zip = zipString;
+    } else if ([zip isKindOfClass:[NSString class]]) {
         contact.zip = zip;
     }
     
@@ -189,14 +206,28 @@
     }
     
     // Image
-    NSString *imageString = dict[@"jpg"];
-    NSData *imageData = [[NSData alloc] initWithBase64EncodedString:imageString options:0];
+    NSString *imageData = dict[@"jpg"];
     
     if (imageData) {
         contact.imageData = imageData;
     }
     
     return contact;
+}
+
+- (void)save {
+    [[NSManagedObjectContext MR_rootSavingContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+        if (success) {
+            NSLog(@"You successfully saved your context.");
+        } else if (error) {
+            NSLog(@"Error saving context: %@", error.description);
+        }
+    }];
+}
+
+- (void)destroy {
+    [self MR_deleteEntity];
+    [self save];
 }
 
 @end

@@ -28,9 +28,6 @@
     
     if (contact.profilePicture) {
         self.profilePicture.image = contact.profilePicture;
-    } else {
-        CDFInitialsAvatar *initialsAvatar = [[CDFInitialsAvatar alloc] initWithRect: self.profilePicture.bounds fullName:contact.fullName];
-        self.profilePicture.image = initialsAvatar.imageRepresentation;
     }
     
     self.name.text = contact.fullName;

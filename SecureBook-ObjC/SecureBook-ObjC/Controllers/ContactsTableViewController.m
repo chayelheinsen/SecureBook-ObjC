@@ -11,7 +11,7 @@
 #import "ContactTableViewCell.h"
 #import "RecentContactsTableViewCell.h"
 #import "UIViewController+Utilities.h"
-#import "CDFInitialsAvatar.h"
+#import "PGMacros.h"
 @import DGElasticPullToRefresh;
 
 @interface ContactsTableViewController () <UISearchControllerDelegate, UISearchResultsUpdating>
@@ -19,6 +19,7 @@
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSMutableArray<PGContact *> *contacts;
 @property (strong, nonatomic) NSMutableArray<PGContact *> *filterdContacts;
+@property (strong, nonatomic) UIVisualEffectView *blurView;
 
 @end
 
@@ -56,7 +57,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    // S tableView
+    // Setup tableView
     DGElasticPullToRefreshLoadingViewCircle *loadingView = [DGElasticPullToRefreshLoadingViewCircle new];
     loadingView.tintColor = [UIColor whiteColor];
     [self.tableView dg_setPullToRefreshFillColor:self.navigationController.navigationBar.barTintColor];
@@ -64,8 +65,6 @@
     
     // Remove that ugly hair line from the navigation bar
     [self removeNavigationBarHairline:self.navigationController.navigationBar];
-    
-    //self.tableView.sectionIndexBackgroundColor = self.navigationController.navigationBar.barTintColor;
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
 
@@ -76,13 +75,33 @@
         [self fetch];
     } loadingView:loadingView];
     
-    // Fetch all the contacts from the store.
-    self.contacts = [[PGContact MR_findAll] mutableCopy];
+    // blurView is lazy loaded
+    [[UIApplication sharedApplication].keyWindow addSubview:self.blurView];
     
-    // If there isn't anything persisted, we will fetch it.
-    if (self.contacts.count == 0 || !self.contacts) {
-        [self fetch];
-    }
+    @weakify(self);
+    
+    // We will fetch and decrypt in the background!
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        @strongify(self);
+        
+        // Fetch and dycrpyt
+        // Fetch all the contacts from the store.
+        self.contacts = [[PGContact MR_findAllInContext:[NSManagedObjectContext MR_rootSavingContext]] mutableCopy];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Update the tableView!
+            // If there isn't anything persisted, we will fetch it.
+            if (self.contacts.count == 0 || !self.contacts) {
+                [self fetch];
+                [self removeBlurView];
+            } else {
+                NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"fullName" ascending:YES];
+                self.contacts = [[self.contacts sortedArrayUsingDescriptors:@[sort]] mutableCopy];
+                [self.tableView reloadData];
+                [self removeBlurView];
+            }
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,7 +146,11 @@
     if (indexPath.section == 0) {
         // The recent contacts cell.
         RecentContactsTableViewCell *cell = (RecentContactsTableViewCell *)c;
-        [cell randomWithData:self.contacts];
+        
+        if ([cell.first.label.text isEqualToString:@""]) {
+            [cell randomWithData:self.contacts];
+        }
+        
     } else {
         // All of the contacts.
         ContactTableViewCell *cell = (ContactTableViewCell *)c;
@@ -226,6 +249,43 @@
     }
     
     return 0;
+}
+
+- (UIVisualEffectView *)blurView {
+    
+    if (_blurView == nil) {
+        // Set up blur view for dycrypting.
+        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blur];
+        blurView.translatesAutoresizingMaskIntoConstraints = NO;
+        blurView.frame = [UIScreen mainScreen].bounds;
+        
+        UILabel *decryptMessage = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                                            0,
+                                                                            blurView.frame.size.width,
+                                                                            blurView.frame.size.height
+                                                                            )];
+        
+        decryptMessage.textColor = [UIColor whiteColor];
+        decryptMessage.font = [UIFont boldSystemFontOfSize:18];
+        decryptMessage.textAlignment = NSTextAlignmentCenter;
+        decryptMessage.text = @"Decrypting your contacts...";
+        [blurView addSubview:decryptMessage];
+        _blurView = blurView;
+    }
+    
+    return _blurView;
+}
+
+- (void)removeBlurView {
+    [UIView animateWithDuration:0.5 animations:^{
+        self.blurView.alpha = 0;
+    } completion:^(BOOL finished) {
+        
+        if (finished) {
+            [self.blurView removeFromSuperview];
+        }
+    }];
 }
 
 @end

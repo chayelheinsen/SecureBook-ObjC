@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A8313A71C5B97C100A32422 /* EncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A83139D1C5B97C100A32422 /* EncryptionTransformer.m */; };
+		6A8313A81C5B97C100A32422 /* NSStringEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A83139F1C5B97C100A32422 /* NSStringEncryptionTransformer.m */; };
+		6A8313A91C5B97C100A32422 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313A11C5B97C100A32422 /* KeychainItemWrapper.m */; };
+		6A8313AA1C5B97C100A32422 /* NSData+AES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313A31C5B97C100A32422 /* NSData+AES256.m */; };
+		6A8313AB1C5B97C100A32422 /* DataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313A61C5B97C100A32422 /* DataGenerator.m */; };
 		6ACE39061C5A55F6002C4E4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39051C5A55F6002C4E4C /* main.m */; };
 		6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39081C5A55F6002C4E4C /* AppDelegate.m */; };
 		6ACE390F1C5A55F6002C4E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE390D1C5A55F6002C4E4C /* Main.storyboard */; };
@@ -47,6 +52,17 @@
 /* Begin PBXFileReference section */
 		1C64D736F90F0CCC79579449 /* Pods-SecureBook-ObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecureBook-ObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SecureBook-ObjC/Pods-SecureBook-ObjC.debug.xcconfig"; sourceTree = "<group>"; };
 		2038F8B6751D3D0A647AC9B0 /* Pods-SecureBook-ObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecureBook-ObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SecureBook-ObjC/Pods-SecureBook-ObjC.release.xcconfig"; sourceTree = "<group>"; };
+		6A83139C1C5B97C100A32422 /* EncryptionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionTransformer.h; sourceTree = "<group>"; };
+		6A83139D1C5B97C100A32422 /* EncryptionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionTransformer.m; sourceTree = "<group>"; };
+		6A83139E1C5B97C100A32422 /* NSStringEncryptionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringEncryptionTransformer.h; sourceTree = "<group>"; };
+		6A83139F1C5B97C100A32422 /* NSStringEncryptionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringEncryptionTransformer.m; sourceTree = "<group>"; };
+		6A8313A01C5B97C100A32422 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		6A8313A11C5B97C100A32422 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		6A8313A21C5B97C100A32422 /* NSData+AES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES256.h"; sourceTree = "<group>"; };
+		6A8313A31C5B97C100A32422 /* NSData+AES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES256.m"; sourceTree = "<group>"; };
+		6A8313A51C5B97C100A32422 /* DataGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataGenerator.h; sourceTree = "<group>"; };
+		6A8313A61C5B97C100A32422 /* DataGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataGenerator.m; sourceTree = "<group>"; };
+		6A8313AC1C5BB14B00A32422 /* PGMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGMacros.h; sourceTree = "<group>"; };
 		6ACE39011C5A55F6002C4E4C /* SecureBook-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SecureBook-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACE39051C5A55F6002C4E4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6ACE39071C5A55F6002C4E4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +124,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A83139A1C5B97C100A32422 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				6A83139B1C5B97C100A32422 /* EncryptionTransformers */,
+				6A8313A01C5B97C100A32422 /* KeychainItemWrapper.h */,
+				6A8313A11C5B97C100A32422 /* KeychainItemWrapper.m */,
+				6A8313A21C5B97C100A32422 /* NSData+AES256.h */,
+				6A8313A31C5B97C100A32422 /* NSData+AES256.m */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		6A83139B1C5B97C100A32422 /* EncryptionTransformers */ = {
+			isa = PBXGroup;
+			children = (
+				6A83139C1C5B97C100A32422 /* EncryptionTransformer.h */,
+				6A83139D1C5B97C100A32422 /* EncryptionTransformer.m */,
+				6A83139E1C5B97C100A32422 /* NSStringEncryptionTransformer.h */,
+				6A83139F1C5B97C100A32422 /* NSStringEncryptionTransformer.m */,
+			);
+			path = EncryptionTransformers;
+			sourceTree = "<group>";
+		};
+		6A8313A41C5B97C100A32422 /* Random Data */ = {
+			isa = PBXGroup;
+			children = (
+				6A8313A51C5B97C100A32422 /* DataGenerator.h */,
+				6A8313A61C5B97C100A32422 /* DataGenerator.m */,
+			);
+			path = "Random Data";
+			sourceTree = "<group>";
+		};
 		6ACE38F81C5A55F6002C4E4C = {
 			isa = PBXGroup;
 			children = (
@@ -230,8 +278,11 @@
 		6ACE395F1C5A9C32002C4E4C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6A83139A1C5B97C100A32422 /* Crypto */,
+				6A8313A41C5B97C100A32422 /* Random Data */,
 				6ACE39601C5A9C32002C4E4C /* CDFInitialsAvatar.h */,
 				6ACE39611C5A9C32002C4E4C /* CDFInitialsAvatar.m */,
+				6A8313AC1C5BB14B00A32422 /* PGMacros.h */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -435,14 +486,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8313A81C5B97C100A32422 /* NSStringEncryptionTransformer.m in Sources */,
+				6A8313AA1C5B97C100A32422 /* NSData+AES256.m in Sources */,
 				6ACE396A1C5AC33D002C4E4C /* RecentContactsTableViewCell.m in Sources */,
 				6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */,
 				6ACE39511C5A7033002C4E4C /* NSString+Utilities.m in Sources */,
 				6ACE39621C5A9C32002C4E4C /* CDFInitialsAvatar.m in Sources */,
 				6ACE395B1C5A9544002C4E4C /* ContactTableViewCell.m in Sources */,
+				6A8313A91C5B97C100A32422 /* KeychainItemWrapper.m in Sources */,
 				6ACE395E1C5A97E7002C4E4C /* UIViewController+Utilities.m in Sources */,
 				6ACE396D1C5AC6DC002C4E4C /* RecentContactView.m in Sources */,
 				6ACE39571C5A8F2F002C4E4C /* ContactsTableViewController.m in Sources */,
+				6A8313AB1C5B97C100A32422 /* DataGenerator.m in Sources */,
+				6A8313A71C5B97C100A32422 /* EncryptionTransformer.m in Sources */,
 				6ACE394B1C5A5949002C4E4C /* PGContact.m in Sources */,
 				6ACE39061C5A55F6002C4E4C /* main.m in Sources */,
 				6ACE39541C5A833C002C4E4C /* SecureBook.xcdatamodeld in Sources */,
