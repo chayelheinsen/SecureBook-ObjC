@@ -216,13 +216,16 @@
 }
 
 - (void)save {
-    [[NSManagedObjectContext MR_rootSavingContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-        if (success) {
-            NSLog(@"You successfully saved your context.");
-        } else if (error) {
-            NSLog(@"Error saving context: %@", error.description);
-        }
-    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [[NSManagedObjectContext MR_rootSavingContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            
+            if (success) {
+                NSLog(@"You successfully saved your context.");
+            } else if (error) {
+                NSLog(@"Error saving context: %@", error.description);
+            }
+        }];
+    });
 }
 
 - (void)destroy {

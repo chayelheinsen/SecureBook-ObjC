@@ -14,6 +14,4 @@
 @property (strong, nonatomic) IBOutlet UIImageView *picture;
 @property (strong, nonatomic) IBOutlet UILabel *information;
 
-//- (void)setDataForContact:(PGContact *)contact;
-
 @end

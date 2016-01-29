@@ -204,8 +204,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
     if ([[segue destinationViewController] isKindOfClass:[SingleContactTableViewController class]]) {
         SingleContactTableViewController *vc = (SingleContactTableViewController *)[segue destinationViewController];
         vc.contact = (PGContact *)sender;
