@@ -8,8 +8,10 @@
 
 #import "ContactEditTableViewController.h"
 #import "ContactHeader.h"
+#import "NSString+Utilities.h"
 @import MXParallaxHeader;
 @import ionicons;
+@import Mercury;
 
 @interface ContactEditTableViewController ()
 
@@ -83,6 +85,52 @@
 
 - (void)save {
     
+    Mercury *mercury = [Mercury sharedInstance];
+    [mercury wait];
+    
+    if (![[self.firstNameField.text removeWhitespace] containsDigits]) {
+        self.contact.firstName = [self.firstNameField.text removeWhitespace];
+    } else {
+        MercuryNotification *error = [MercuryNotification new];
+        error.text = @"Couldn't save first name. Please try again.";
+        error.color = [UIColor redColor];
+        [mercury postNotification:error];
+    }
+    
+    if (![[self.lastNameField.text removeWhitespace] containsDigits]) {
+        self.contact.lastName = [self.lastNameField.text removeWhitespace];
+    } else {
+        MercuryNotification *error = [MercuryNotification new];
+        error.text = @"Couldn't save last name. Please try again.";
+        error.color = [UIColor redColor];
+        [mercury postNotification:error];
+    }
+    
+    if ([[self.emailField.text removeWhitespace] isValidEmail]) {
+        self.contact.email = [self.emailField.text removeWhitespace];
+    } else {
+        MercuryNotification *error = [MercuryNotification new];
+        error.text = @"Couldn't save email. Please try again.";
+        error.color = [UIColor redColor];
+        [mercury postNotification:error];
+    }
+    
+    if ([[self.phoneField.text removeWhitespace] isValidPhoneNumber]) {
+        self.contact.phone = [self.phoneField.text removeWhitespace];
+    } else {
+        MercuryNotification *error = [MercuryNotification new];
+        error.text = @"Couldn't save phone number. Please try again.";
+        error.color = [UIColor redColor];
+        [mercury postNotification:error];
+    }
+    
+    self.contact.address = self.addressField.text;
+    
+    [self.contact save];
+    
+    [mercury go];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)setFields {

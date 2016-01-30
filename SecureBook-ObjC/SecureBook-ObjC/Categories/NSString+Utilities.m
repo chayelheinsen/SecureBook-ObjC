@@ -29,7 +29,7 @@
 }
 
 - (BOOL)isValidPhoneNumber {
-    NSString *phoneRegex = @"\\d{3}-\\d{3}-\\d{4}";
+    NSString *phoneRegex = @"\\+?1?-?[(]?\\d{3}[)]?\\s?-?\\s?\\d{3}\\s?-?\\s?\\d{4}"; // @"\\d{3}-\\d{3}-\\d{4}";
     NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
     return [phoneTest evaluateWithObject:self];
 }
@@ -37,6 +37,10 @@
 - (BOOL)isValidURL {
     NSURL *candidateURL = [NSURL URLWithString:self];
     return candidateURL && candidateURL.scheme && candidateURL.host;
+}
+
+- (NSString *)removeWhitespace {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 @end

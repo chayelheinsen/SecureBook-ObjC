@@ -25,23 +25,21 @@
     UIBarButtonItem *edit = [[UIBarButtonItem alloc] initWithImage:[IonIcons imageWithIcon:ion_edit size:25 color:self.navigationController.navigationBar.tintColor] style:UIBarButtonItemStylePlain target:self action:@selector(edit)];
     self.navigationItem.rightBarButtonItem = edit;
     
+    UIView *footer = [UIView new];
+    self.tableView.tableFooterView = footer;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     // Parallax Header
     self.tableView.parallaxHeader.view = [ContactHeader initFromNibWithContact:self.contact];
     self.tableView.parallaxHeader.height = 300;
     self.tableView.parallaxHeader.mode = MXParallaxHeaderModeFill;
     self.tableView.parallaxHeader.minimumHeight = 20;
     
-    UIView *footer = [UIView new];
-    self.tableView.tableFooterView = footer;
-    
     self.title = self.contact.firstName;
 }
-
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-//    
-//    
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

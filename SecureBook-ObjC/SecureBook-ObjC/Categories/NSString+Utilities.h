@@ -30,4 +30,10 @@
  */
 - (BOOL)isValidURL;
 
+/**
+ *  Removes leading and trailing whitespace.
+ *  @return A new string.
+ */
+- (NSString *)removeWhitespace;
+
 @end
