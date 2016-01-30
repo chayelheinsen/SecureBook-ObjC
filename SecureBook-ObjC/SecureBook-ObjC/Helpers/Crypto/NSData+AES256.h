@@ -1,12 +1,12 @@
 //
 //  NSData+AES256.h
-//  Securis
+//  SecureBook-ObjC
 //
-//  Created by PRNDL1 on 10/14/13.
-//  Copyright (c) 2013 PRNDL Development Studios, LLC. All rights reserved.
+//  Created by Chayel Heinsen on 1/29/16.
+//  Copyright © 2016 Chayel Heinsen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import <CommonCrypto/CommonCryptor.h>
 #import <CommonCrypto/CommonKeyDerivation.h>
 #import "DataGenerator.h"

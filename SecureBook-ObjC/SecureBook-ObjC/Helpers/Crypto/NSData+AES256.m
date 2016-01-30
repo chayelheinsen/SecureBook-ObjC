@@ -1,16 +1,16 @@
 //
 //  NSData+AES256.m
-//  Securis
+//  SecureBook-ObjC
 //
-//  Created by PRNDL1 on 10/14/13.
-//  Copyright (c) 2013 PRNDL Development Studios, LLC. All rights reserved.
+//  Created by Chayel Heinsen on 1/29/16.
+//  Copyright © 2016 Chayel Heinsen. All rights reserved.
 //
 
 #import "NSData+AES256.h"
 
 @implementation NSData (AES256)
 
-NSString * const kRNCryptManagerErrorDomain = @"com.prndl.EncryptedCoreData";
+NSString * const kRNCryptManagerErrorDomain = @"com.chayelheinsen.SecureBook";
 
 const CCAlgorithm kAlgorithm = kCCAlgorithmAES128;
 const NSUInteger kAlgorithmKeySize = kCCKeySizeAES128;
@@ -21,33 +21,27 @@ const NSUInteger kPBKDFRounds = 10000;
 
 // Borrowed some code from http://robnapier.net/aes-commoncrypto/
 
-+ (NSData *)AESKeyForPassword:(NSString *)password
-                         salt:(NSData *)salt {
-    NSMutableData *
-    derivedKey = [NSMutableData dataWithLength:kAlgorithmKeySize];
++ (NSData *)AESKeyForPassword:(NSString *)password salt:(NSData *)salt {
+    NSMutableData * derivedKey = [NSMutableData dataWithLength:kAlgorithmKeySize];
     
     int
-    result __unused = CCKeyDerivationPBKDF(kCCPBKDF2,            // algorithm
-                                  password.UTF8String,  // password
+    result __unused = CCKeyDerivationPBKDF(kCCPBKDF2,       // algorithm
+                                  password.UTF8String,      // password
                                   [password lengthOfBytesUsingEncoding:NSUTF8StringEncoding],  // passwordLength
-                                  salt.bytes,           // salt
-                                  salt.length,          // saltLen
-                                  kCCPRFHmacAlgSHA1,    // PRF
-                                  kPBKDFRounds,         // rounds
-                                  derivedKey.mutableBytes, // derivedKey
-                                  derivedKey.length); // derivedKeyLen
+                                  salt.bytes,               // salt
+                                  salt.length,              // saltLen
+                                  kCCPRFHmacAlgSHA1,        // PRF
+                                  kPBKDFRounds,             // rounds
+                                  derivedKey.mutableBytes,  // derivedKey
+                                  derivedKey.length);       // derivedKeyLen
     
     // Do not log password here
-    NSAssert(result == kCCSuccess,
-             @"Unable to create AES key for password: %d", result);
+    NSAssert(result == kCCSuccess, @"Unable to create AES key for password: %d", result);
     
     return derivedKey;
 }
 
-- (NSData *)encryptedDataWithPassword:(NSString *)password
-                              iv:(NSData **)iv
-                            salt:(NSData **)salt
-                           error:(NSError **)error {
+- (NSData *)encryptedDataWithPassword:(NSString *)password iv:(NSData **)iv salt:(NSData **)salt error:(NSError **)error {
     
     NSAssert(iv, @"IV must not be NULL");
     NSAssert(salt, @"salt must not be NULL");
@@ -58,12 +52,9 @@ const NSUInteger kPBKDFRounds = 10000;
     NSData *key = [NSData AESKeyForPassword:password salt:*salt];
     
     size_t outLength;
-    NSMutableData *
-    cipherData = [NSMutableData dataWithLength:self.length +
-                  kAlgorithmBlockSize];
+    NSMutableData * cipherData = [NSMutableData dataWithLength:self.length + kAlgorithmBlockSize];
     
-    CCCryptorStatus
-    result = CCCrypt(kCCEncrypt, // operation
+    CCCryptorStatus result = CCCrypt(kCCEncrypt, // operation
                      kAlgorithm, // Algorithm
                      kCCOptionPKCS7Padding, // options
                      key.bytes, // key
@@ -77,31 +68,25 @@ const NSUInteger kPBKDFRounds = 10000;
     
     if (result == kCCSuccess) {
         cipherData.length = outLength;
-    }
-    else {
+    } else {
+        
         if (error) {
-            *error = [NSError errorWithDomain:kRNCryptManagerErrorDomain
-                                         code:result
-                                     userInfo:nil];
+            *error = [NSError errorWithDomain:kRNCryptManagerErrorDomain code:result userInfo:nil];
         }
+        
         return nil;
     }
     
     return cipherData;
 }
 
-- (NSData *)decryptedDataWithPassword:(NSString *)password
-                              iv:(NSData *)iv
-                            salt:(NSData *)salt
-                           error:(NSError **)error {
+- (NSData *)decryptedDataWithPassword:(NSString *)password iv:(NSData *)iv salt:(NSData *)salt error:(NSError **)error {
     
     NSData *key = [NSData AESKeyForPassword:password salt:salt];
     
     size_t outLength;
-    NSMutableData *
-    decryptedData = [NSMutableData dataWithLength:self.length];
-    CCCryptorStatus
-    result = CCCrypt(kCCDecrypt, // operation
+    NSMutableData * decryptedData = [NSMutableData dataWithLength:self.length];
+    CCCryptorStatus result = CCCrypt(kCCDecrypt, // operation
                      kAlgorithm, // Algorithm
                      kCCOptionPKCS7Padding, // options
                      key.bytes, // key
@@ -115,19 +100,19 @@ const NSUInteger kPBKDFRounds = 10000;
     
     if (result == kCCSuccess) {
         [decryptedData setLength:outLength];
-    }
-    else {
+    } else {
+        
         if (result != kCCSuccess) {
+          
             if (error) {
-                *error = [NSError
-                          errorWithDomain:kRNCryptManagerErrorDomain
-                          code:result
-                          userInfo:nil];
+                *error = [NSError errorWithDomain:kRNCryptManagerErrorDomain code:result userInfo:nil];
             }
+            
             return nil;
         }
     }
     
     return decryptedData;
 }
+
 @end

@@ -1,21 +1,20 @@
 //
 //  NSStringEncryptionTransformer.m
-//  Securis
+//  SecureBook-ObjC
 //
-//  Created by PRNDL1 on 11/13/13.
-//  Copyright (c) 2013 PRNDL Development Studios, LLC. All rights reserved.
+//  Created by Chayel Heinsen on 1/29/16.
+//  Copyright © 2016 Chayel Heinsen. All rights reserved.
 //
 
 #import "NSStringEncryptionTransformer.h"
 
 @implementation NSStringEncryptionTransformer
-+ (Class)transformedValueClass
-{
+
++ (Class)transformedValueClass {
     return [NSString class];
 }
 
-- (id)transformedValue:(NSString*)string
-{
+- (id)transformedValue:(NSString *)string {
     NSLog(@"------------------------");
     NSLog(@"Starting Encryption");
     NSLog(@"Original Attribute: %@",string);
@@ -26,9 +25,12 @@
     return encryptedData;
 }
 
-- (id)reverseTransformedValue:(NSData*)data
-{
-    if (nil == data)return nil;
+- (id)reverseTransformedValue:(NSData *)data {
+    
+    if (nil == data) {
+        return nil;
+    }
+    
     NSLog(@"------------------------");
     NSLog(@"Starting Decryption");
     NSLog(@"Encrypted Attribute: %@",data);

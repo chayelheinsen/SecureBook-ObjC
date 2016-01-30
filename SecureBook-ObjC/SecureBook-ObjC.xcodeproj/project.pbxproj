@@ -17,6 +17,7 @@
 		6A8313B41C5BBFA200A32422 /* ContactInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313B31C5BBFA200A32422 /* ContactInformationTableViewCell.m */; };
 		6A8313B71C5BC0B900A32422 /* ContactHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313B61C5BC0B900A32422 /* ContactHeader.m */; };
 		6A8313BA1C5C0F2A00A32422 /* ContactEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313B91C5C0F2A00A32422 /* ContactEditTableViewController.m */; };
+		6A8313BF1C5D061D00A32422 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8313BE1C5D061D00A32422 /* Security.framework */; };
 		6ACE39061C5A55F6002C4E4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39051C5A55F6002C4E4C /* main.m */; };
 		6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39081C5A55F6002C4E4C /* AppDelegate.m */; };
 		6ACE390F1C5A55F6002C4E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE390D1C5A55F6002C4E4C /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		6A8313B61C5BC0B900A32422 /* ContactHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactHeader.m; sourceTree = "<group>"; };
 		6A8313B81C5C0F2A00A32422 /* ContactEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactEditTableViewController.h; sourceTree = "<group>"; };
 		6A8313B91C5C0F2A00A32422 /* ContactEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactEditTableViewController.m; sourceTree = "<group>"; };
+		6A8313BE1C5D061D00A32422 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6ACE39011C5A55F6002C4E4C /* SecureBook-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SecureBook-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACE39051C5A55F6002C4E4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6ACE39071C5A55F6002C4E4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8313BF1C5D061D00A32422 /* Security.framework in Frameworks */,
 				9F4955B11F69AA15B68FF929 /* Pods_SecureBook_ObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +316,7 @@
 		70077CAF0431B93E976103FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A8313BE1C5D061D00A32422 /* Security.framework */,
 				7958FADCEBC445FF8FAB5149 /* Pods_SecureBook_ObjC.framework */,
 			);
 			name = Frameworks;

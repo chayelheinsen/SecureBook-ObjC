@@ -1,9 +1,9 @@
 //
-//  EncryptionTransformer.h
-//  Securis
+//  EncryptedTransformer.h
+//  SecureBook-ObjC
 //
-//  Created by PRNDL1 on 10/31/13.
-//  Copyright (c) 2013 PRNDL Development Studios, LLC. All rights reserved.
+//  Created by Chayel Heinsen on 1/29/16.
+//  Copyright © 2016 Chayel Heinsen. All rights reserved.
 //
 
 #import "NSData+AES256.h"
@@ -16,6 +16,6 @@
 /**
  * Returns the key used for encrypting / decrypting values during transformation.
  */
-- (NSString*)key;
+- (NSString *)key;
 
 @end
