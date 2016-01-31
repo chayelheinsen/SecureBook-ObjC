@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+    <entity name="PGContact" representedClassName="PGContact" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="alternatePhone" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="county" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="Transformable" valueTransformerName="NSStringEncryptionTransformer" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PGContact" positionX="-63" positionY="-18" width="128" height="240"/>
+    </elements>
+</model>

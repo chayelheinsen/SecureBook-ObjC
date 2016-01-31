@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ContactHeader">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vl-7j-lWn" userLabel="Background">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6xA-jk-hnX">
+                    <rect key="frame" x="225" y="225" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="6xA-jk-hnX" secondAttribute="height" multiplier="1:1" id="Dnx-Y2-JfW"/>
+                        <constraint firstAttribute="height" constant="150" id="Tvd-Nf-1PL"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB9-Se-QE7">
+                    <rect key="frame" x="8" y="397" width="584" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="DsP-RS-l1r"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="QB9-Se-QE7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="7ZR-jl-aPR"/>
+                <constraint firstItem="QB9-Se-QE7" firstAttribute="top" secondItem="6xA-jk-hnX" secondAttribute="bottom" constant="22" id="FvW-xY-Lms"/>
+                <constraint firstItem="6xA-jk-hnX" firstAttribute="centerY" secondItem="7Vl-7j-lWn" secondAttribute="centerY" id="OQn-W3-f74"/>
+                <constraint firstAttribute="trailing" secondItem="7Vl-7j-lWn" secondAttribute="trailing" id="OeJ-uw-UWP"/>
+                <constraint firstItem="7Vl-7j-lWn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UCR-vZ-dV1"/>
+                <constraint firstAttribute="trailing" secondItem="QB9-Se-QE7" secondAttribute="trailing" constant="8" id="bRV-Ya-c30"/>
+                <constraint firstAttribute="bottom" secondItem="7Vl-7j-lWn" secondAttribute="bottom" id="fSb-mR-BDz"/>
+                <constraint firstItem="6xA-jk-hnX" firstAttribute="centerX" secondItem="7Vl-7j-lWn" secondAttribute="centerX" id="gWf-2S-aj4"/>
+                <constraint firstItem="7Vl-7j-lWn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lOA-2L-Srb"/>
+            </constraints>
+            <connections>
+                <outlet property="background" destination="7Vl-7j-lWn" id="QEe-My-TmW"/>
+                <outlet property="name" destination="QB9-Se-QE7" id="OXd-3D-lPY"/>
+                <outlet property="profilePicture" destination="6xA-jk-hnX" id="bQf-Lb-l58"/>
+            </connections>
+        </view>
+    </objects>
+</document>
