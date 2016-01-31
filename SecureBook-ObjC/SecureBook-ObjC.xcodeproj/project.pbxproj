@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A2C03D21C5D860800853001 /* CHKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2C03D11C5D860800853001 /* CHKeychain.m */; };
 		6A8313A71C5B97C100A32422 /* EncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A83139D1C5B97C100A32422 /* EncryptionTransformer.m */; };
 		6A8313A81C5B97C100A32422 /* NSStringEncryptionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A83139F1C5B97C100A32422 /* NSStringEncryptionTransformer.m */; };
 		6A8313A91C5B97C100A32422 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313A11C5B97C100A32422 /* KeychainItemWrapper.m */; };
@@ -18,6 +19,12 @@
 		6A8313B71C5BC0B900A32422 /* ContactHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313B61C5BC0B900A32422 /* ContactHeader.m */; };
 		6A8313BA1C5C0F2A00A32422 /* ContactEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313B91C5C0F2A00A32422 /* ContactEditTableViewController.m */; };
 		6A8313BF1C5D061D00A32422 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8313BE1C5D061D00A32422 /* Security.framework */; };
+		6A8313C21C5D512200A32422 /* DecryptingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313C11C5D512100A32422 /* DecryptingView.m */; };
+		6A8313C51C5D53C600A32422 /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313C41C5D53C600A32422 /* TouchID.m */; };
+		6A8313C91C5D5BE700A32422 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313C81C5D5BE700A32422 /* Pin.m */; };
+		6A8313CD1C5D61EC00A32422 /* LockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313CC1C5D61EC00A32422 /* LockViewController.m */; };
+		6A8313D01C5D630B00A32422 /* LockViewNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313CF1C5D630B00A32422 /* LockViewNumber.m */; };
+		6A8313D31C5D63E200A32422 /* PincodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8313D21C5D63E200A32422 /* PincodeView.m */; };
 		6ACE39061C5A55F6002C4E4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39051C5A55F6002C4E4C /* main.m */; };
 		6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACE39081C5A55F6002C4E4C /* AppDelegate.m */; };
 		6ACE390F1C5A55F6002C4E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACE390D1C5A55F6002C4E4C /* Main.storyboard */; };
@@ -58,6 +65,8 @@
 /* Begin PBXFileReference section */
 		1C64D736F90F0CCC79579449 /* Pods-SecureBook-ObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecureBook-ObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SecureBook-ObjC/Pods-SecureBook-ObjC.debug.xcconfig"; sourceTree = "<group>"; };
 		2038F8B6751D3D0A647AC9B0 /* Pods-SecureBook-ObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecureBook-ObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SecureBook-ObjC/Pods-SecureBook-ObjC.release.xcconfig"; sourceTree = "<group>"; };
+		6A2C03D01C5D860800853001 /* CHKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHKeychain.h; sourceTree = "<group>"; };
+		6A2C03D11C5D860800853001 /* CHKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHKeychain.m; sourceTree = "<group>"; };
 		6A83139C1C5B97C100A32422 /* EncryptionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionTransformer.h; sourceTree = "<group>"; };
 		6A83139D1C5B97C100A32422 /* EncryptionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionTransformer.m; sourceTree = "<group>"; };
 		6A83139E1C5B97C100A32422 /* NSStringEncryptionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringEncryptionTransformer.h; sourceTree = "<group>"; };
@@ -79,6 +88,18 @@
 		6A8313B81C5C0F2A00A32422 /* ContactEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactEditTableViewController.h; sourceTree = "<group>"; };
 		6A8313B91C5C0F2A00A32422 /* ContactEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactEditTableViewController.m; sourceTree = "<group>"; };
 		6A8313BE1C5D061D00A32422 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6A8313C01C5D512100A32422 /* DecryptingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecryptingView.h; sourceTree = "<group>"; };
+		6A8313C11C5D512100A32422 /* DecryptingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecryptingView.m; sourceTree = "<group>"; };
+		6A8313C31C5D53C600A32422 /* TouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchID.h; path = TouchID/TouchID.h; sourceTree = "<group>"; };
+		6A8313C41C5D53C600A32422 /* TouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchID.m; path = TouchID/TouchID.m; sourceTree = "<group>"; };
+		6A8313C71C5D5BE700A32422 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = Pin/Pin.h; sourceTree = "<group>"; };
+		6A8313C81C5D5BE700A32422 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = Pin/Pin.m; sourceTree = "<group>"; };
+		6A8313CB1C5D61EC00A32422 /* LockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockViewController.h; sourceTree = "<group>"; };
+		6A8313CC1C5D61EC00A32422 /* LockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewController.m; sourceTree = "<group>"; };
+		6A8313CE1C5D630B00A32422 /* LockViewNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockViewNumber.h; sourceTree = "<group>"; };
+		6A8313CF1C5D630B00A32422 /* LockViewNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewNumber.m; sourceTree = "<group>"; };
+		6A8313D11C5D63E200A32422 /* PincodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PincodeView.h; sourceTree = "<group>"; };
+		6A8313D21C5D63E200A32422 /* PincodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PincodeView.m; sourceTree = "<group>"; };
 		6ACE39011C5A55F6002C4E4C /* SecureBook-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SecureBook-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACE39051C5A55F6002C4E4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6ACE39071C5A55F6002C4E4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +194,24 @@
 			path = "Random Data";
 			sourceTree = "<group>";
 		};
+		6A8313C61C5D53CA00A32422 /* TouchID */ = {
+			isa = PBXGroup;
+			children = (
+				6A8313C31C5D53C600A32422 /* TouchID.h */,
+				6A8313C41C5D53C600A32422 /* TouchID.m */,
+			);
+			name = TouchID;
+			sourceTree = "<group>";
+		};
+		6A8313CA1C5D5BED00A32422 /* Pin */ = {
+			isa = PBXGroup;
+			children = (
+				6A8313C71C5D5BE700A32422 /* Pin.h */,
+				6A8313C81C5D5BE700A32422 /* Pin.m */,
+			);
+			name = Pin;
+			sourceTree = "<group>";
+		};
 		6ACE38F81C5A55F6002C4E4C = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				6ACE39481C5A5949002C4E4C /* PGContact */,
+				6A8313C61C5D53CA00A32422 /* TouchID */,
+				6A8313CA1C5D5BED00A32422 /* Pin */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,12 +294,14 @@
 		6ACE393C1C5A56B6002C4E4C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6ACE39551C5A8F2F002C4E4C /* ContactsTableViewController.h */,
-				6ACE39561C5A8F2F002C4E4C /* ContactsTableViewController.m */,
-				6A8313AF1C5BBC8A00A32422 /* SingleContactTableViewController.h */,
-				6A8313B01C5BBC8A00A32422 /* SingleContactTableViewController.m */,
 				6A8313B81C5C0F2A00A32422 /* ContactEditTableViewController.h */,
 				6A8313B91C5C0F2A00A32422 /* ContactEditTableViewController.m */,
+				6ACE39551C5A8F2F002C4E4C /* ContactsTableViewController.h */,
+				6ACE39561C5A8F2F002C4E4C /* ContactsTableViewController.m */,
+				6A8313CB1C5D61EC00A32422 /* LockViewController.h */,
+				6A8313CC1C5D61EC00A32422 /* LockViewController.m */,
+				6A8313AF1C5BBC8A00A32422 /* SingleContactTableViewController.h */,
+				6A8313B01C5BBC8A00A32422 /* SingleContactTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +340,12 @@
 				6ACE39691C5AC33D002C4E4C /* RecentContactsTableViewCell.m */,
 				6ACE396B1C5AC6DC002C4E4C /* RecentContactView.h */,
 				6ACE396C1C5AC6DC002C4E4C /* RecentContactView.m */,
+				6A8313C01C5D512100A32422 /* DecryptingView.h */,
+				6A8313C11C5D512100A32422 /* DecryptingView.m */,
+				6A8313CE1C5D630B00A32422 /* LockViewNumber.h */,
+				6A8313CF1C5D630B00A32422 /* LockViewNumber.m */,
+				6A8313D11C5D63E200A32422 /* PincodeView.h */,
+				6A8313D21C5D63E200A32422 /* PincodeView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,6 +358,8 @@
 				6ACE39601C5A9C32002C4E4C /* CDFInitialsAvatar.h */,
 				6ACE39611C5A9C32002C4E4C /* CDFInitialsAvatar.m */,
 				6A8313AC1C5BB14B00A32422 /* PGMacros.h */,
+				6A2C03D01C5D860800853001 /* CHKeychain.h */,
+				6A2C03D11C5D860800853001 /* CHKeychain.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -519,13 +570,19 @@
 				6ACE396A1C5AC33D002C4E4C /* RecentContactsTableViewCell.m in Sources */,
 				6ACE39091C5A55F6002C4E4C /* AppDelegate.m in Sources */,
 				6ACE39511C5A7033002C4E4C /* NSString+Utilities.m in Sources */,
+				6A8313C21C5D512200A32422 /* DecryptingView.m in Sources */,
 				6A8313B41C5BBFA200A32422 /* ContactInformationTableViewCell.m in Sources */,
+				6A8313CD1C5D61EC00A32422 /* LockViewController.m in Sources */,
 				6ACE39621C5A9C32002C4E4C /* CDFInitialsAvatar.m in Sources */,
+				6A8313C51C5D53C600A32422 /* TouchID.m in Sources */,
 				6ACE395B1C5A9544002C4E4C /* ContactTableViewCell.m in Sources */,
+				6A8313D31C5D63E200A32422 /* PincodeView.m in Sources */,
+				6A8313C91C5D5BE700A32422 /* Pin.m in Sources */,
 				6A8313A91C5B97C100A32422 /* KeychainItemWrapper.m in Sources */,
 				6ACE395E1C5A97E7002C4E4C /* UIViewController+Utilities.m in Sources */,
 				6ACE396D1C5AC6DC002C4E4C /* RecentContactView.m in Sources */,
 				6ACE39571C5A8F2F002C4E4C /* ContactsTableViewController.m in Sources */,
+				6A8313D01C5D630B00A32422 /* LockViewNumber.m in Sources */,
 				6A8313AB1C5B97C100A32422 /* DataGenerator.m in Sources */,
 				6A8313B71C5BC0B900A32422 /* ContactHeader.m in Sources */,
 				6A8313A71C5B97C100A32422 /* EncryptionTransformer.m in Sources */,
@@ -533,6 +590,7 @@
 				6A8313BA1C5C0F2A00A32422 /* ContactEditTableViewController.m in Sources */,
 				6A8313B11C5BBC8A00A32422 /* SingleContactTableViewController.m in Sources */,
 				6ACE39061C5A55F6002C4E4C /* main.m in Sources */,
+				6A2C03D21C5D860800853001 /* CHKeychain.m in Sources */,
 				6ACE39541C5A833C002C4E4C /* SecureBook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

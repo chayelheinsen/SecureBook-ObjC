@@ -13,6 +13,10 @@
 #import "UIViewController+Utilities.h"
 #import "SingleContactTableViewController.h"
 #import "PGMacros.h"
+#import "DecryptingView.h"
+#import "LockViewController.h"
+#import "Pin.h"
+
 @import DGElasticPullToRefresh;
 
 @interface ContactsTableViewController () <UISearchControllerDelegate, UISearchResultsUpdating>
@@ -21,7 +25,7 @@
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSMutableArray<PGContact *> *contacts;
 @property (strong, nonatomic) NSMutableArray<PGContact *> *filterdContacts;
-@property (strong, nonatomic) UIVisualEffectView *blurView;
+@property (strong, nonatomic) DecryptingView *decryptView;
 
 @end
 
@@ -54,34 +58,24 @@
         [self fetch];
     } loadingView:loadingView];
     
-    // blurView is lazy loaded
-    [[UIApplication sharedApplication].keyWindow addSubview:self.blurView];
+    NSString *pin = [CHKeychain objectForKey:@"pincode"];
     
-    @weakify(self);
+    self.decryptView = [DecryptingView new];
+    [self.decryptView showOnViewController:self.navigationController];
     
-    // We will fetch and decrypt in the background!
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        @strongify(self);
+    if (pin == nil) {
+        // First Run
+        // Lets set up a pin!
+        Pin *pin = [Pin singleton];
+        [pin setNewPin];
+        [self decryptData];
+    } else {
+        Pin *pin = [Pin singleton];
         
-        // Fetch and dycrpyt
-        // Fetch all the contacts from the store.
-        self.contacts = [[PGContact MR_findAllInContext:[NSManagedObjectContext MR_rootSavingContext]] mutableCopy];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // Update the tableView!
-            // If there isn't anything persisted, we will fetch it.
-            if (self.contacts.count == 0 || !self.contacts) {
-                [self fetchWithCompletion:^{
-                    [self removeBlurView];
-                }];
-            } else {
-                NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"fullName" ascending:YES];
-                self.contacts = [[self.contacts sortedArrayUsingDescriptors:@[sort]] mutableCopy];
-                [self.tableView reloadData];
-                [self removeBlurView];
-            }
-        });
-    });
+        [pin showWithCompletion:^(BOOL success) {
+            [self decryptData];
+        }];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -298,41 +292,32 @@
     return _searchController;
 }
 
-- (UIVisualEffectView *)blurView {
+- (void)decryptData {
+    @weakify(self);
     
-    if (_blurView == nil) {
-        // Set up blur view for dycrypting.
-        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blur];
-        blurView.translatesAutoresizingMaskIntoConstraints = NO;
-        blurView.frame = [UIScreen mainScreen].bounds;
+    // We will fetch and decrypt in the background!
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        @strongify(self);
         
-        UILabel *decryptMessage = [[UILabel alloc] initWithFrame:CGRectMake(0,
-                                                                            0,
-                                                                            blurView.frame.size.width,
-                                                                            blurView.frame.size.height
-                                                                            )];
+        // Fetch and dycrpyt
+        // Fetch all the contacts from the store.
+        self.contacts = [[PGContact MR_findAllInContext:[NSManagedObjectContext MR_rootSavingContext]] mutableCopy];
         
-        decryptMessage.textColor = [UIColor whiteColor];
-        decryptMessage.font = [UIFont boldSystemFontOfSize:18];
-        decryptMessage.textAlignment = NSTextAlignmentCenter;
-        decryptMessage.text = @"Decrypting your contacts...";
-        [blurView addSubview:decryptMessage];
-        _blurView = blurView;
-    }
-    
-    return _blurView;
-}
-
-- (void)removeBlurView {
-    [UIView animateWithDuration:0.5 animations:^{
-        self.blurView.alpha = 0;
-    } completion:^(BOOL finished) {
-        
-        if (finished) {
-            [self.blurView removeFromSuperview];
-        }
-    }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Update the tableView!
+            // If there isn't anything persisted, we will fetch it.
+            if (self.contacts.count == 0 || !self.contacts) {
+                [self fetchWithCompletion:^{
+                    [self.decryptView hide];
+                }];
+            } else {
+                NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"fullName" ascending:YES];
+                self.contacts = [[self.contacts sortedArrayUsingDescriptors:@[sort]] mutableCopy];
+                [self.tableView reloadData];
+                [self.decryptView hide];
+            }
+        });
+    });
 }
 
 @end

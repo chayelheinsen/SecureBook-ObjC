@@ -24,7 +24,7 @@
      * if a key doesn't exist, generate a new one and store it in the keychain
      */
     
-    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc]initWithIdentifier:@"Encryption_Key" accessGroup:nil];
+    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"Encryption_Key" accessGroup:nil];
     
     if ([keychainItem objectForKey:(__bridge id)kSecAttrService] && [(NSString *)[keychainItem objectForKey:(__bridge id)kSecAttrService] length] > 0) {
         return [keychainItem objectForKey:(__bridge id)kSecAttrService];
