@@ -2,9 +2,7 @@
 //  NSData+AES256.m
 //  SecureBook-ObjC
 //
-//  Created by Chayel Heinsen on 1/29/16.
-//  Copyright © 2016 Chayel Heinsen. All rights reserved.
-//
+// https://github.com/rsravan/CoreDataEncryption
 
 #import "NSData+AES256.h"
 
@@ -22,7 +20,7 @@ const NSUInteger kPBKDFRounds = 10000;
 // Borrowed some code from http://robnapier.net/aes-commoncrypto/
 
 + (NSData *)AESKeyForPassword:(NSString *)password salt:(NSData *)salt {
-    NSMutableData * derivedKey = [NSMutableData dataWithLength:kAlgorithmKeySize];
+    NSMutableData *derivedKey = [NSMutableData dataWithLength:kAlgorithmKeySize];
     
     int
     result __unused = CCKeyDerivationPBKDF(kCCPBKDF2,       // algorithm
@@ -52,7 +50,7 @@ const NSUInteger kPBKDFRounds = 10000;
     NSData *key = [NSData AESKeyForPassword:password salt:*salt];
     
     size_t outLength;
-    NSMutableData * cipherData = [NSMutableData dataWithLength:self.length + kAlgorithmBlockSize];
+    NSMutableData *cipherData = [NSMutableData dataWithLength:self.length + kAlgorithmBlockSize];
     
     CCCryptorStatus result = CCCrypt(kCCEncrypt, // operation
                      kAlgorithm, // Algorithm
