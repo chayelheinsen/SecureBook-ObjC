@@ -5,6 +5,8 @@
 //  Created by Chayel Heinsen on 1/30/16.
 //  Copyright © 2016 Chayel Heinsen. All rights reserved.
 //
+// Most of code came from https://github.com/tiny2n/JKLLockScreenViewController
+// It's MIT
 
 #import <UIKit/UIKit.h>
 

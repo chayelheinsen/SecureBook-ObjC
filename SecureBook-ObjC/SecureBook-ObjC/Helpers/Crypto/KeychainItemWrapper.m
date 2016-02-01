@@ -2,9 +2,7 @@
 //  KeychainItemWrapper.m
 //  SecureBook-ObjC
 //
-//  Created by Chayel Heinsen on 1/29/16.
-//  Copyright © 2016 Chayel Heinsen. All rights reserved.
-//
+// https://github.com/rsravan/CoreDataEncryption
 
 #define PASSWORD_USES_DATA
 
